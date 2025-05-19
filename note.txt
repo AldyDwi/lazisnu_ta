@@ -1,0 +1,96 @@
+# Structure
+/d:/Projects/lazisnu/app/
+├── Controllers/
+│   ├── admin/
+│   |   ├── example/
+│   │   |   ├── list_controller.php
+│   ├── landing_page/
+│   │   ├── list_controller.php
+│   ├── api/
+│   │   ├── list_controller.php
+├── Models/
+├── Views/
+│   ├── admin/
+│   │   ├── layout/
+│   │   │   ├── view/
+│   │   │   │   ├── header.php
+│   │   │   │   ├── footer.php
+│   │   │   ├── js/
+│   │   │   │   ├── template.js
+│   │   ├── page/
+│   │   │   ├── home/
+│   │   │   │   ├── view/
+│   │   │   │   ├── js/
+│   │   ├── custom/
+│   ├── landing_page/
+│   │   ├── layout/
+│   │   ├── page/
+│   │   ├── custom/
+│   ├── api/
+├── Config/
+├── Helpers/
+├── Libraries/
+└── Public/
+    ├── assets/
+    │   ├── themes/
+    │   │   ├── landing_page/
+    │   │   │   ├── css/
+    │   │   │   ├── plugin/
+    │   │   │   ├── js/
+    │   │   │   ├── images/
+    │   │   ├── admin/ 
+    ├───├── modules/
+    └── uploads/
+
+# Details Structure Controllers 
+├── Controllers/
+│   ├── admin/
+│   |   ├── example/
+│   │   |   ├── list_controller.php
+│   ├── landing_page/
+│   │   ├── list_controller.php
+│   ├── api/
+│   │   ├── list_controller.php
+1. Dibagian controller ini dibagi per akses 
+2. Tiap akses di folder admin atau modul admin ditambahkan di folder admin 
+3. Untuk akses dapat ditambahkan di route, didalam group per modul  
+# Details Structure Views
+├── Views/
+│   ├── admin/
+│   │   ├── layout/
+│   │   │   ├── view/
+│   │   │   │   ├── header.php
+│   │   │   │   ├── footer.php
+│   │   │   ├── js/
+│   │   │   │   ├── template.js
+│   │   ├── page/
+│   │   │   ├── home/
+│   │   │   │   ├── view/
+│   │   │   │   │   ├ _partials/
+│   │   │   │   ├── js/
+│   │   ├── custom/
+1. Penjelasan view disini dibagi per akses 
+    -> admin 
+    -> landing page 
+    -> api 
+2. didalam folder admin (module admin) 3 folder 
+    -> layout: berisi layouting dan juga core template js 
+    -> page: berisi daftar view dari controller di module admin
+    -> custom: berisi html, js dan css untuk custom layout 
+# Details Structure Public
+└── Public/
+    ├── assets/
+    │   ├── themes/
+    │   │   ├── landing_page/
+    │   │   │   ├── css/
+    │   │   │   ├── plugin/
+    │   │   │   ├── js/
+    │   │   │   ├── images/
+    │   │   ├── admin/ 
+    ├───├── modules/
+    └── uploads/ 
+1. Di folder public terdapat 2 folder yang dipakai uploads dan assets 
+2. Untuk assets terdapat 2 folder
+    -> themes: untuk menyimpan asset tema berdasarakan halaman akses landing page dan admin 
+    -> modules: diguankan unutk load data js di views  
+3. Folder uploads digunakan untuk menyimpan data yang diupload admin 

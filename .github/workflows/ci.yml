@@ -1,0 +1,31 @@
+name: main
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    steps:
+      - name: Fetch and Reset
+        run: |
+          git fetch origin main
+          git reset --hard origin/main
+          git clean -fd
+
+      - name: Verify Services
+        run: |
+          docker ps
+          docker logs web_container_lazisnu || true
+          docker-compose ps || true
+
+      - name: Install PHP Dependencies in Container
+        run: |
+          if docker ps | grep -q "web_container_lazisnu"; then
+            docker exec web_container_lazisnu composer install --no-dev --optimize-autoloader --no-interaction
+          else
+            echo "Container web_container_lazisnu is not running!" && exit 1
+          fi

@@ -1,0 +1,60 @@
+# CodeIgniter 4 specific
+writable/cache/*
+!writable/cache/index.html
+writable/logs/*
+!writable/logs/index.html
+writable/session/*
+!writable/session/index.html
+writable/uploads/*
+!writable/uploads/index.html
+writable/debugbar/*
+writable/coverage/*
+
+# Environment files
+.env
+.env.backup
+.env.production
+
+# PHPUnit
+phpunit.xml
+.phpunit.result.cache
+.phpunit.cache
+
+# Composer
+/vendor/
+composer.lock
+
+# IDE specific
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+nbproject/
+
+# GitHub Actions Runner specific
+_work/
+_diag/
+.credentials
+.path
+.runner
+.env.*
+.credentials_rsaparams
+.env.runner
+bin/
+externals/
+actions-runner
+
+# System Files
+.DS_Store
+Thumbs.db
+*.log
+*.bak
+
+# Node modules (if using asset compilation)
+node_modules/
+npm-debug.log
+
+# Build artifacts
+build/
+dist/
+public/assets/cache/

@@ -1,0 +1,53 @@
+version: '3.8'
+
+x-develop:
+  watch:
+    - path: .
+      target: /var/www/html
+      action: sync
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: web_container_lazisnu
+    volumes:
+      - .:/var/www/html
+    ports:
+      - "8084:80"
+    environment:
+      TZ: Asia/Jakarta
+    networks:
+      - app_network
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: "512M"
+
+  db:
+    image: mysql:5.7
+    container_name: db_container_lazisnu
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      TZ: Asia/Jakarta
+    ports:
+      - "3309:3306"
+    volumes:
+      - /opt/mysql-config/my.cnf:/etc/mysql/conf.d/custom.cnf
+      - /opt/mysql-config/db_lazisnu:/var/lib/mysql
+    networks:
+      - app_network
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: "512M"
+
+networks:
+  app_network:
+    driver: bridge
