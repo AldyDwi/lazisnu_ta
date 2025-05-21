@@ -57,7 +57,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 
   <!-- Tinymce -->
-  <script src="https://cdn.tiny.cloud/1/eqrmv2nqybnoj0hhdvgvraz1hk54q6p74fp75m7qveslhq96/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+  <script src="https://cdn.tiny.cloud/1/4wk1su1j1eogwmohvp2j0dl81kqgy1z70k7zq5ki2cpbo8fw/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
   <script src="https://cdn.jsdelivr.net/npm/@tinymce/tinymce-jquery@2/dist/tinymce-jquery.min.js"></script>
 
   <!-- js -->

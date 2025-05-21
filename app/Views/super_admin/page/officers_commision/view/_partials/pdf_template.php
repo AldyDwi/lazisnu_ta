@@ -107,7 +107,7 @@
         <p>TANDA TERIMA BAGIAN PETUGAS LAPANGAN PENGGIAT KOIN NU</p>
         <p>NU CARE LAZISNU</p>
         <p>PENGURUS RANTING NAHDLATUL ULAMA <?= strtoupper($region_name) ?> KEC. <?= strtoupper($district_name) ?> KOTA KEDIRI</p>
-        <p><?= strtoupper($year) ?></p>
+        <p>BULAN <?= strtoupper($month) ?> <?= strtoupper($year) ?></p>
     </div>
 
     <table>

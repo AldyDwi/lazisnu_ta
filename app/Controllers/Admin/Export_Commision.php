@@ -195,6 +195,19 @@ class Export_Commision extends BaseController
             $region_name = count($transactions) > 0 ? $transactions[0]['region_name'] : 'Tidak Ada Data';
             $district_name = count($transactions) > 0 ? $transactions[0]['district_name'] : 'Tidak Ada Data';
             $year = count($transactions) > 0 ? $transactions[0]['year'] : 'Tidak Ada Data';
+
+            // Konversi angka bulan ke nama bulan
+            $bulanName = date('F', mktime(0, 0, 0, $currentMonth, 1));
+
+            // Jika ingin dalam bahasa Indonesia
+            $bulanIndonesia = [
+                'January' => 'Januari', 'February' => 'Februari', 'March' => 'Maret',
+                'April' => 'April', 'May' => 'Mei', 'June' => 'Juni',
+                'July' => 'Juli', 'August' => 'Agustus', 'September' => 'September',
+                'October' => 'Oktober', 'November' => 'November', 'December' => 'Desember'
+            ];
+
+            $month = $bulanIndonesia[$bulanName] ?? $bulanName;
     
     
             // Load view sebagai template PDF
@@ -202,7 +215,8 @@ class Export_Commision extends BaseController
                 'groupedData' => $groupedData, 
                 'region_name' => $region_name, 
                 'district_name' => $district_name,
-                'year' => $year
+                'year' => $year,
+                'month' => $month,
             ]);
     
             // Konfigurasi DomPDF
